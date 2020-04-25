@@ -2,8 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('Home')"></head>
 <body>
+    <th:block th:replace="partials/navbar :: navbar"></th:block>
 
-    <h1>Welcome to my Library!</h1>
+    <div class="container">
+        <h1 class="text-center mt-5">Welcome to my Library!</h1>
+        <p>This application will access Google Books API and include functionality to allow users to practice speed reading using the texts from Google Books API.</p>
+    </div>
 
     <th:block th:replace="partials/scripts :: scripts" />
 </body>

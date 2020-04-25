@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials/head :: head('Books')"></head>
+<body>
+<th:block th:replace="partials/navbar :: navbar"></th:block>
+
+<div class="container">
+    <h1 class="text-center mt-5">Books will be displayed here</h1>
+</div>
+
+<th:block th:replace="partials/scripts :: scripts" />
+</body>
+</html>
