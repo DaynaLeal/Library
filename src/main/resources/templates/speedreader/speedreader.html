@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials/head :: head('Speed Reader')"></head>
+<body>
+<th:block th:replace="partials/navbar :: navbar"></th:block>
+
+<div class="container">
+    <h1 class="text-center mt-5">Practice Speed Reading Here</h1>
+    <form action="@{/speedreader}">
+        <textarea name="readingInput" id="readingInput" cols="30" rows="10" placeholder="enter text here"></textarea>
+    </form>
+</div>
+
+<th:block th:replace="partials/scripts :: scripts" />
+</body>
+</html>
