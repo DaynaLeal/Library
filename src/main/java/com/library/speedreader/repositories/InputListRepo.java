@@ -1,4 +1,4 @@
 package com.library.speedreader.repositories;
 
-public interface SpeedReadRepo {
+public interface InputListRepo {
 }
