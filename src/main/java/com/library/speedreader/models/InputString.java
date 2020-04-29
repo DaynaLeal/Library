@@ -1,6 +1,5 @@
 package com.library.speedreader.models;
 
-//import java.util.List;
 import javax.persistence.*;
 
 
@@ -15,8 +14,21 @@ public class InputString {
     @Column(name="input_string", columnDefinition="TEXT")
     private String inputString;
 
-    public InputString (String inputString) {
+    //constructors
+    public InputString(){}
+
+    public InputString (long id, String inputString) {
+        this.id = id;
         this.inputString = inputString;
+    }
+
+    //getters and setters
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getInputString() {
