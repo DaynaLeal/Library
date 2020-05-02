@@ -26,9 +26,9 @@ public class SpeedReadController {
     public String viewSpeedReaderPage(Model view){
         InputString introString = inputStringDao.findInputStringById(1);
         //string to list
-        List<String> intro = new ArrayList<String>(Arrays.asList(split(introString, " ")));
+//        List<String> intro = new ArrayList<String>(Arrays.asList(split(introString, " ")));
 
-        view.addAttribute("intro", intro);
+        view.addAttribute("introString", introString);
         return "speedreader/speedreader";
     }
 
