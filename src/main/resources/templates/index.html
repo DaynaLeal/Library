@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="partials/head :: head('Home')"></head>
 <body>
-    <th:block th:replace="partials/navbar :: navbar"></th:block>
+    <th:block th:replace="partials/navbar :: navbar"> </th:block>
 
     <div class="container">
         <h1 class="text-center mt-5">Welcome to my Library!</h1>
-        <p>This application will access Google Books API and have a separate speed reading functionality. I am working on researching an API to pull text from.</p>
+        <p>This application will access Google Books API and have a separate speed reading functionality. I am working on researching an API to pull text from for speed reading.</p>
     </div>
 
     <th:block th:replace="partials/scripts :: scripts" />

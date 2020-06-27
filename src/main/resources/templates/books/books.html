@@ -1,13 +1,37 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:replace="partials/head :: head('Books')"></head>
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org">-->
+<!--<head th:replace="partials/head :: head('Books')"></head>-->
+<!--<body>-->
+<!--<th:block th:replace="partials/navbar :: navbar"></th:block>-->
+
+<!--<div class="container">-->
+<!--    <h1 class="text-center mt-5">Books will be displayed here</h1>-->
+<!--</div>-->
+
+<!--<th:block th:replace="partials/scripts :: scripts" />-->
+<!--</body>-->
+<!--</html>-->
+
+<html>
+<head>
+    <title>Books API Example</title>
+</head>
 <body>
-<th:block th:replace="partials/navbar :: navbar"></th:block>
-
-<div class="container">
-    <h1 class="text-center mt-5">Books will be displayed here</h1>
-</div>
-
-<th:block th:replace="partials/scripts :: scripts" />
+<div id="content"></div>
+<script>
+    fetch("https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699")
+        .then(function(res) {
+            return res.json();
+        })
+        .then(function(result) {
+            title = result.items[0].volumeInfo.title;
+            description = result.items[0].volumeInfo.description;
+            console.log(title);
+            console.log(description);
+        }),
+        function(error) {
+            console.log(error);
+        };
+</script>
 </body>
 </html>
