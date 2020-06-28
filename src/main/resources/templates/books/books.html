@@ -1,33 +1,37 @@
-<!--<!DOCTYPE html>-->
-<!--<html xmlns:th="http://www.thymeleaf.org">-->
-<!--<head th:replace="partials/head :: head('Books')"></head>-->
-<!--<body>-->
-<!--<th:block th:replace="partials/navbar :: navbar"></th:block>-->
-
-<!--<div class="container">-->
-<!--    <h1 class="text-center mt-5">Books will be displayed here</h1>-->
-<!--</div>-->
-
-<!--<th:block th:replace="partials/scripts :: scripts" />-->
-<!--</body>-->
-<!--</html>-->
-
-<html>
-<head>
-    <title>Books API Example</title>
-</head>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials/head :: head('Books')"></head>
 <body>
-<div id="content"></div>
+<th:block th:replace="partials/navbar :: navbar"> </th:block>
+
+<div id="content" class="card-group"></div>
+
+
+<th:block th:replace="partials/scripts :: scripts" />
 <script>
-    fetch("https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699")
+    fetch("https://www.googleapis.com/books/v1/volumes?q=ibsn:9780747591054")
         .then(function(res) {
             return res.json();
         })
         .then(function(result) {
-            title = result.items[0].volumeInfo.title;
-            description = result.items[0].volumeInfo.description;
-            console.log(title);
-            console.log(description);
+            for (let i = 0; i < 10; i++){
+                let title = result.items[i].volumeInfo.title;
+                let description = result.items[i].volumeInfo.description;
+                let image = result.items[i].volumeInfo.imageLinks.thumbnail;
+                // console.log(title);
+                // console.log(description);
+                let cardDiv = document.getElementById("content");
+                cardDiv.innerHTML +=
+                    `<div class="card m-2" style="width: 18rem;">
+                        <img class="card-img-top" src="` + image + `" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">` + title + `</h5>
+                            <p class="card-text">` + description + `</p>
+                            <a href="#" class="btn text-white btn-info">Go somewhere</a>
+                        </div>
+                    </div>`;
+            }
+
         }),
         function(error) {
             console.log(error);
