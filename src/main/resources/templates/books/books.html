@@ -4,7 +4,14 @@
 <body>
 <th:block th:replace="partials/navbar :: navbar"> </th:block>
 
-<div id="content" class="card-group"></div>
+    <div class="row">
+        <div class="searchBar col-4">
+            <h1>TEST FORM SPACE</h1>
+            <p>test content</p>
+        </div>
+        <div id="content" class="card-group col-8"></div>
+    </div>
+
 
 
 <th:block th:replace="partials/scripts :: scripts" />
@@ -18,16 +25,16 @@
                 let title = result.items[i].volumeInfo.title;
                 let description = result.items[i].volumeInfo.description;
                 let image = result.items[i].volumeInfo.imageLinks.thumbnail;
-                // console.log(title);
-                // console.log(description);
                 let cardDiv = document.getElementById("content");
                 cardDiv.innerHTML +=
-                    `<div class="card m-2" style="width: 18rem;">
-                        <img class="card-img-top" src="` + image + `" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">` + title + `</h5>
-                            <p class="card-text">` + description + `</p>
-                            <a href="#" class="btn text-white btn-info">Go somewhere</a>
+                    `<div class="col-4">
+                        <div class="card m-2">
+                            <img class="card-img-top" src="` + image + `" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">` + title + `</h5>
+                                <p class="card-text">` + description + `</p>
+                                <a href="#" class="btn text-white btn-info">Go somewhere</a>
+                            </div>
                         </div>
                     </div>`;
             }
