@@ -48,6 +48,13 @@ public class Book {
 
     private String genre;
 
+    @ManyToOne
+    @JoinColumn (name = "user_id")
+    private User user;
+
+
+
+
     //CONSTRUCTORS
 
     public Book(){}
@@ -188,5 +195,13 @@ public class Book {
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
