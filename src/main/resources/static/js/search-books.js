@@ -1,3 +1,15 @@
+$(document).ready(function () {
+
+
+
+
+
+
+
+});
+
+
+
 fetch("https://www.googleapis.com/books/v1/volumes?q=ibsn:9780747591054")
     .then(function(res) {
         return res.json();

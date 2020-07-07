@@ -6,8 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class BooksController {
 
+
     @GetMapping("/books")
     public String viewBooksPage(){
         return "books/books";
     }
+
+    
 }

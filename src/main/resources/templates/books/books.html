@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="partials/head :: head('Books')"></head>
+<head th:replace="partials/head :: head('Book Search')"></head>
 <body>
 <th:block th:replace="partials/navbar :: navbar"> </th:block>
 
+
+
     <div class="row">
         <div class="searchBar col-4">
-            <h1>TEST FORM SPACE</h1>
-            <p>test content</p>
+
+            <form th:action="@{/books}" th:method="POST" class="search-form">
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01">
+                        <option selected>Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+
+            </form>
+
         </div>
         <div id="content" class="card-group col-8"></div>
     </div>
