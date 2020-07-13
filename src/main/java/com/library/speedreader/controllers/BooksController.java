@@ -12,5 +12,8 @@ public class BooksController {
         return "books/books";
     }
 
-    
+    @GetMapping("/books/save")
+    public String saveBookPage() {
+        return "books/save-book";
+    }
 }

@@ -35,7 +35,7 @@ $(document).ready(function () {
                             <div class="card-body">
                                 <h5 class="card-title">` + title + `</h5>
                                 <p class="card-text">` + description + `</p>
-                                <input class="btn btn-info" type="submit" value="` + googleId +`" id="search-choice">
+                                <input class="btn btn-info search-choice" type="submit" value="` + googleId +`">
                             </div>
                         </div>
                     </div>`;
@@ -48,6 +48,11 @@ $(document).ready(function () {
     })
 
 
+    $(".card").click(function () {
+        // let choiceValue = $(this).find(".search-choice").val();
+        // console.log(choiceValue)
+        console.log('clicked')
+    })
 
 });
 
