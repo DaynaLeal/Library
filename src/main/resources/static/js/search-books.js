@@ -16,6 +16,14 @@ $(document).ready(function () {
             }
         }
         console.log(fetchInput);
+        fetchRequest(fetchInput)
+
+
+    });
+
+
+    function fetchRequest(fetchInput){
+
 
         fetch(fetchInput)
             .then(function(res) {
@@ -49,14 +57,13 @@ $(document).ready(function () {
             function(error) {
                 console.log(error);
             };
-    })
+    }
 
-
-    $(".card").click(function () {
-        // let choiceValue = $(this).find(".search-choice").val();
-        // console.log(choiceValue)
-        console.log('clicked')
-    })
+    // $(".card").click(function () {
+    //     // let choiceValue = $(this).find(".search-choice").val();
+    //     // console.log(choiceValue)
+    //     console.log('clicked')
+    // })
 
 });
 
