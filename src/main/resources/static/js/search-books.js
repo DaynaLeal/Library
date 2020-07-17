@@ -23,10 +23,14 @@ $(document).ready(function () {
             })
             .then(function(result) {
                 for (let i = 0; i < 10; i++){
-                    let title = result.items[i].volumeInfo.title;
-                    let description = result.items[i].volumeInfo.description;
+                    let title = result.items[0].volumeInfo.title;
+                    let description = result.items[0].volumeInfo.description;
                     let image = result.items[i].volumeInfo.imageLinks.thumbnail;
                     let googleId = result.items[i].id;
+                    // $(".book-title").html(title);
+                    // $(".book-description").html(description);
+                    // document.getElementsByClassName("book-title").innerHTML = title;
+                    // document.getElementsByClassName("book-description").innerHTML = description;
                     let cardDiv = document.getElementById("content");
                     cardDiv.innerHTML +=
                         `<div class="col-4">
