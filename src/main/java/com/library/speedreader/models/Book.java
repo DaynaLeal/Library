@@ -54,12 +54,12 @@ public class Book {
 
 
 
-
     //CONSTRUCTORS
 
     public Book(){}
 
-    public Book(String volumeId, String title, String author, String description, String imageUrl, String publishedDate, String readDate, int timesRead, String review, int rating, String freeRead, String mediumType, String literaryType, String genre) {
+    public Book(long id, String volumeId, String title, String author, String description, String imageUrl, String publishedDate, String readDate, int timesRead, String review, int rating, String freeRead, String mediumType, String literaryType, String genre) {
+        this.id = id;
         this.volumeId = volumeId;
         this.title = title;
         this.author = author;
