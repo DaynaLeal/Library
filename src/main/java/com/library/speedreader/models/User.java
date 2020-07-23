@@ -26,7 +26,8 @@ public class User {
     //CONSTRUCTORS
     public User(){}
 
-    public User(String username, String password, String email, List<Book> bookList) {
+    public User(long id, String username, String password, String email, List<Book> bookList) {
+        this.id = id;
         this.username = username;
         this.password = password;
         this.email = email;
@@ -34,6 +35,7 @@ public class User {
     }
 
     public User(User copy) {
+        this.id = copy.id;
         this.username = copy.username;
         this.password = copy.password;
         this.email = copy.email;

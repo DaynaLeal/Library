@@ -13,6 +13,9 @@ public class Book {
     @Column(name = "volume_id", nullable = false, unique = true)
     private String volumeId;
 
+    @Column(name = "user_id", nullable = false)
+    private long userId;
+
     @Column(nullable = false)
     private String title;
 
@@ -58,9 +61,10 @@ public class Book {
 
     public Book(){}
 
-    public Book(long id, String volumeId, String title, String author, String description, String imageUrl, String publishedDate, String readDate, int timesRead, String review, int rating, String freeRead, String mediumType, String literaryType, String genre) {
+    public Book(long id, String volumeId, long user_id, String title, String author, String description, String imageUrl, String publishedDate, String readDate, int timesRead, String review, int rating, String freeRead, String mediumType, String literaryType, String genre) {
         this.id = id;
         this.volumeId = volumeId;
+        this.userId = user_id;
         this.title = title;
         this.author = author;
         this.description = description;
@@ -91,6 +95,14 @@ public class Book {
 
     public void setVolumeId(String volumeId) {
         this.volumeId = volumeId;
+    }
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
     public String getTitle() {
